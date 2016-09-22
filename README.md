@@ -4,7 +4,7 @@
 
 This is a tiny web server that performs encryption and decryption of a given text with a key, using a AES 256 bits cipher in CTR mode.
 
----
+**Endpoints:**
 
 > ## `GET /encrypt/:key/:text`
 
