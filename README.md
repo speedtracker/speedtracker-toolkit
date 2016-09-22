@@ -4,12 +4,16 @@
 
 This is a tiny web server that performs encryption and decryption of a given text with a key, using a AES 256 bits cipher in CTR mode.
 
-## `GET /encrypt/:key/:text`
+---
 
-Uses `key` to encrypt `text` and returns the result.
+> ## `GET /encrypt/:key/:text`
 
-The specified text must be encoded using `encodeURIComponent()`.
+> Uses `key` to encrypt `text` and returns the result.
 
-## `GET /decrypt/:key/:text`
+> The specified text must be encoded using `encodeURIComponent()`.
 
-Uses `key` to decrypt `text` and returns the result.
+---
+
+> ## `GET /decrypt/:key/:text`
+
+> Uses `key` to decrypt `text` and returns the result.
