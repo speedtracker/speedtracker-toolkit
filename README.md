@@ -1,6 +1,10 @@
-![SpeedTracker logo](https://speedtracker.org/assets/images/logo-square-inverted-128.png)
+<img src="https://speedtracker.org/assets/images/logo-full-square-inverted.png" width="300">
 
-# SpeedTracker Toolkit
+# Toolkit
+
+*Tiny helper service to assist with SpeedTracker usage*
+
+## Introduction
 
 This is a tiny web server that performs encryption and decryption of a given text with a key, using a AES 256 bits cipher in CTR mode.
 
