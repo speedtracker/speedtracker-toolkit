@@ -8,17 +8,20 @@ const crypto = require('crypto')
 
 app.use(cors())
 
-app.get('/encrypt/:key/:text', (req, res) => {
-  let cipher = crypto.createCipher('aes-256-ctr', req.params.key)
-  let encrypted = cipher.update(decodeURIComponent(req.params.text), 'utf8', 'hex')
+app.get('/encrypt/:key/:text?', (req, res) => {
+  const key =req.params.key
+  const text = req.params.text || req.params.key
+
+  const cipher = crypto.createCipher('aes-256-ctr', key)
+  let encrypted = cipher.update(decodeURIComponent(text), 'utf8', 'hex')
   
   encrypted += cipher.final('hex')
   
   res.send(encrypted)
 })
 
-app.get('/decrypt/:key/:text', (req, res) => {
-  let decipher = crypto.createDecipher('aes-256-ctr', req.params.key)
+app.get('/decrypt/:key/:text?', (req, res) => {
+  const decipher = crypto.createDecipher('aes-256-ctr', req.params.key)
   let decrypted = decipher.update(req.params.text, 'hex', 'utf8')
   
   decrypted += decipher.final('utf8')
